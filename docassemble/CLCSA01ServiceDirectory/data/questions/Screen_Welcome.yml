@@ -1,0 +1,25 @@
+# Welcome screen
+continue button field: CLCSA_ScreenWelcome
+question: Find the Legal Services You Need
+subquestion: |
+
+  <h6 class="disclaimer_heading">Terms of Use</h6>
+  <p class="disclaimer_text">
+  This application does not provide you with legal advice, nor should you consider
+  any legal service recommended by this application as an endorsement of that service.
+  Please call and make your own enquiries to ensure the service is suitable for you.
+  </p>
+  <p class="disclaimer_text">
+  This application may ask some personal questions, such as the type of legal issue
+  you are encountering and questions about your identity, background and where you 
+  live.  We do not store or use any of this information.  Once you exit this app
+  your personal information is deleted.
+  </p>
+  <p class="disclaimer_text">
+  You should only continue if you agree to these terms.
+  </p>
+
+buttons:
+  - No thanks: exit
+    url: http://www.bom.gov.au/sa/forecasts/adelaide.shtml
+  - I agree: continue

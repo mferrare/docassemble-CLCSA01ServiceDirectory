@@ -1,0 +1,21 @@
+imports:
+  - dataclasses
+  - json
+---
+include:
+  - Config_Interview.yml
+  - Config_Store.yml
+  - Static_Assets.yml
+  - Screen_Welcome.yml
+  - Filtration_Layers.yml
+  - Screen_Final.yml
+---
+mandatory: True
+code: |
+  # TODO: maybe init in a background process so that it is not blocking
+  initStore
+  CLCSA_ScreenWelcome
+  driveTheFiltrationProcess()
+  CLCSA_matchedServices = CLCSA_ManagerDirectory.getMatchedServices()
+  CLCSA_matchedServicesFlattened = [v if len(s.variants) > 0 else s for s in CLCSA_matchedServices for v in s.variants ]
+  CLCSA_ScreenFinal

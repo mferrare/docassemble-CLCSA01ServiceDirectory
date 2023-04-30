@@ -1,0 +1,91 @@
+---
+# Dictionary containing information regarding the Services provided by CLCSA #
+variable name: CLCSA_Services
+use objects: True
+data:
+  - name: '[Southern Community Justice Centre](https://www.communityjusticesa.org.au)'
+    id: OrgSOUTHERNC516583
+    location:
+      - South
+    legal issue:
+      - Other
+  - name: '[Limestone Coast Community Justice Centre](https://www.communityjusticesa.org.au)'
+    id: OrgLIMESTONE5290101
+    location:
+      - Mid North
+    legal issue:
+      - Other
+  - name: '[Riverland Commuity Justice Centre](https://www.communityjusticesa.org.au)'
+    id: OrgRIVERLAND534373
+    location:
+      - South
+    legal issue:
+      - Other
+  - name: '[Roma Mitchell Human Rights Volunteer Service](https://www.facebook.com/RomaMitchellCLCInc/)'
+    id: OrgROMAMITCH506789
+    location:
+      - Central
+      - East
+    legal issue:
+      - Other
+  - name: '[Environmental Defenders Office](https://www.edo.org.au)'
+    id: OrgENVIRONMEN5000123
+    location:
+      - East
+      - Central
+    legal issue:
+      - Environmental
+  - name: '[Homelessness Legal Service](https://www.justicenet.org.au/what-we-do/homeless-legal)'
+    id: OrgHOMELESSNEday176
+    location:
+      - Central
+    legal issue:
+      - Homelessness
+  - name: '[Refugee Advocacy Service of South Australia](https://rassa.org.au)'
+    id: OrgREFUGEEADnly209
+    location:
+      - Central
+    legal issue:
+      - Migration
+    indigenous:
+      - No
+      - Do not wish to say
+  - name: '[JusticeNetSA](https://www.justicenet.org.au)'
+    id: OrgJUSTICENETire64
+    location:
+      - North
+      - East
+      - South
+      - West
+      - Central
+    legal issue:
+      - Financial
+      - Migration
+      - Mediation
+      - Other
+  - name: "[Women's Legal Services South Australia](https://www.wlssa.org.au)"
+    id: OrgWOMEN'SLE500088
+    location:
+      - North
+      - South
+      - East
+      - West
+      - Central
+    legal issue:
+      - Other
+    gender:
+      - Female
+      - Other
+  - name: '[Inspiring Determination Independence Growth and Opportunities (INDIGO)](https://www.wlssa.org.au/copy-of-the-womens-specialist-progr)'
+    id: OrgINSPIRINGire120
+    location:
+      - South
+    legal issue:
+      - Other
+      - Domestic Violence
+    gender:
+      - Female
+      - Other
+
+---
+

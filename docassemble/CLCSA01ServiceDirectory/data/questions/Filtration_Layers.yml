@@ -1,0 +1,150 @@
+---
+# LegalIssue quesiton
+question: What type of legal issue do you have?
+subquestion: |
+
+  You may select more than one legal issue.
+
+  <div id="tailwindApp"><div id="dll_multiBox_container" class="dll_multiBox_multi_line" x-data="boxSelectMulti()" >
+    <template x-for="item in items" :key="item.index">
+        <div id="dll_multiBox_item" :class="{selected:item.checked}" @click="checkOrigin(item.index)" :data-original-index="item.index">
+          <div id="dll_multiBox_item_checkmark" :class="{checked:item.checked}" >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" stroke-width="1.8"> <path d="M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" :fill="item.checked ? 'currentColor' : 'none'" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 12.75L11.25 15L15 9.75" :stroke="item.checked ? '#fdfeff' : 'none'" stroke-linecap="round" stroke-linejoin="round"></path> </svg> 
+          </div>
+          <div id="dll_multiBox_item_img"><img x-init="replaceImgToSvg($el)" :src="item.img"></div>
+          <div id="dll_multiBox_item_label" x-text="item.label"></div>
+          
+        </div>
+    </template>
+  </div></div>
+
+# TODO: add validation so that at least one is selected
+# TODO: convert choices to python dictionary so that we have access to it in the javascript code withou waiting for the checkboxes to fully load
+fields:
+  - no label: CLCSA_legalIssue
+    datatype: checkboxes
+    code: |
+      CLCSA_LegalIssuesList
+    none of the above: False
+progress: 25
+---
+code: |
+  CLCSA_LegalIssuesList = [
+    {
+      "Centrelink": "Centrelink",
+      "image": "centrelink"
+    },
+    {
+      "Domestic Violence": "Domestic Violence",
+      "image": "domestic violence"
+    },
+    {
+      "Elder Abuse": "Elder Abuse",
+      "image": "elder"
+    },
+    {
+      "Environmental": "Environmental",
+      "image": "enviromental"
+    },
+    {
+      "Financial": "Financial (personal debt, bankruptcy, mortgage)",
+      "image": "financial"
+    },
+    {
+      "Homelessness": "Homelessness",
+      "image": "homelessness"
+    },
+    {
+      "Migration": "Migration (refugee visa applications)",
+      "image": "migration"
+    },
+    {
+      "Mediation": "Mediation (neighbourhood conflicts, disputes)",
+      "image": "mediation"
+    },
+    {
+      "Other": "Other",
+      "image": "other"
+    }
+  ]
+---
+# location question
+question: Where are you located?
+subquestion: |
+  Please select the location or locations that you are looking for services in.
+
+  You may select more than one location.
+# TODO: add validation so that at least one is selected
+# TODO: maybe use flip cards
+fields:
+  - no label: CLCSA_location
+    datatype: checkboxes
+    choices:
+      - <b>City of Adelaide</b>: Central
+      - <b>North</b><br><ul class="a"><li>Prospect</li><li>Port Adelaide-Enfield</li><li>Salisbury</li><li>Tea Tree Gully</li><li>Playford</li></ul>: North
+      - <b>South</b><br><ul class="a"><li>Mitcham</li><li>Marion</li><li>Onkaparinga</li></ul>: South
+      - <b>East</b><br><ul class="a"><li>Burnside</li><li>Campbelltown</li><li>Norwood, Payneham & St. Peters</li></ul>: East
+      - <b>West</b><br><ul class="a"><li>West Torrens</li><li>Holdfast Bay</li><li>Charles Sturt</li></ul>: West
+      - <b>Outback</b><br><ul class="a"><li>Yankalilla</li><li>Alexandrina</li><li>Adelaide Hills</li><li>Barossa</li><li>Gawler</li></ul>: Outback
+      - <b>Mid North</b><br><ul class="a"><li>Mount Gambier</li><li>Murray Bridge</li><li>Port Augusta</li><li>Port Lincoln</li><li>Victor Harbor</li><li>Whyalla</li><li>Pirie</li></ul>: Mid North
+    none of the above: False
+progress: 50
+---
+# indigenous question
+question: Do you identify as Aboriginal or Torres Strait Islander?
+subquestion: |
+  Please select one
+
+  <div id="tailwindApp"><div id="dll_multiBox_container" class="dll_multiBox_single_line" x-data="boxSelectRadio()" >
+    <template x-for="item in items" :key="item.index">
+        <div id="dll_multiBox_item" :class="{selected:item.checked, dll_multiBox_item_flex: true}" @click="checkOrigin(item.index)" :data-original-index="item.index">
+          <template x-if="item.img != ''">
+            <div id="dll_multiBox_item_img"><img x-init="replaceImgToSvg($el)" :src="item.img"></div>
+          </template>
+          <div id="dll_multiBox_item_label" x-text="item.label"></div>
+          <div id="dll_multiBox_item_checkmark" :class="{checked:item.checked}" >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" stroke-width="1.8"> <path d="M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" :fill="item.checked ? 'currentColor' : 'none'" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 12.75L11.25 15L15 9.75" :stroke="item.checked ? '#fdfeff' : 'none'" stroke-linecap="round" stroke-linejoin="round"></path> </svg> 
+          </div>
+        </div>
+    </template>
+  </div></div>
+fields:
+  - no label: CLCSA_indigenous
+    datatype: radio
+    choices:
+      - Yes
+      - No
+      - Do not wish to say
+
+progress: 75
+---
+# gender question
+question: What is your gender?
+subquestion: |
+  Please select one
+
+  <div id="tailwindApp"><div id="dll_multiBox_container" class="dll_multiBox_single_line" x-data="boxSelectRadio()" >
+    <template x-for="item in items" :key="item.index">
+        <div id="dll_multiBox_item" :class="{selected:item.checked, dll_multiBox_item_flex: true}" @click="checkOrigin(item.index)" :data-original-index="item.index">
+          <template x-if="item.img != ''">
+            <div id="dll_multiBox_item_img"><img x-init="replaceImgToSvg($el)" :src="item.img"></div>
+          </template>
+          <div id="dll_multiBox_item_label" x-text="item.label"></div>
+          <div id="dll_multiBox_item_checkmark" :class="{checked:item.checked}" >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" stroke-width="1.8"> <path d="M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" :fill="item.checked ? 'currentColor' : 'none'" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 12.75L11.25 15L15 9.75" :stroke="item.checked ? '#fdfeff' : 'none'" stroke-linecap="round" stroke-linejoin="round"></path> </svg> 
+          </div>
+        </div>
+    </template>
+  </div></div>
+fields:
+  - no label: CLCSA_gender
+    datatype: radio
+    choices:
+      - 'Female': Female
+        image: female
+      - 'Male': Male
+        image: male
+      - 'Other': Other
+        image: other
+
+progress: 100

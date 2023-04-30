@@ -1,0 +1,360 @@
+---
+modules:
+  - .storeManagement
+  - .directoryManagement
+---
+code: |
+  CLCSA_ManagerDirectory = ServiceDirectoryManager(
+    filters=Filters(),
+    contractsDossier=ContractsManager(originalContracts=_contractsList),
+    store=StoreManager()
+  )
+
+  CLCSA_ManagerDirectory.store.setStoreFromJsonFile()
+  CLCSA_ManagerStore = CLCSA_ManagerDirectory.store
+  initStore = True
+---
+code: |
+  _contractsList: list[ServiceContract] = [
+    ServiceContract(
+        # Inspiring Determination Independence Growth and Opportunities (INDIGO)
+        organisationID='OrgINSPIRINGire120',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", IsEither=['Domestic Violence', 'Other']),
+            ServiceCondition(TheSelected="location", Is="South"),
+            ServiceCondition(TheSelected="gender", IsEither=['Female', 'Other'])
+        ]),
+    ServiceContract(
+        # JusticeNet SA
+        organisationID='OrgJUSTICENETire64',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", IsEither=['Financial', 'Migration', 'Mediation', 'Other']),
+            ServiceCondition(TheSelected="location", IsEither=['North', 'East', 'South', 'West', 'Central'])
+        ]),
+    ServiceContract(
+        # Refugee Advocacy Service of South Australia
+        organisationID='OrgREFUGEEADnly209',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Migration"),
+            ServiceCondition(TheSelected="location", Is="Central"),
+            ServiceCondition(TheSelected="indigenous", IsEither=['No', 'Do not wish to say'])
+        ]),
+    ServiceContract(
+        # Homelessness Legal Service
+        organisationID='OrgHOMELESSNEday176',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Homelessness"),
+            ServiceCondition(TheSelected="location", Is="Central")
+        ]),
+    ServiceContract(
+        # Environmental Defenders Office
+        organisationID='OrgENVIRONMEN5000123',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Environmental"),
+            ServiceCondition(TheSelected="location", IsEither=['Central', 'East'])
+        ]),
+    ServiceContract(
+        # Roma Mitchell Human Rights Volunteer Service
+        organisationID='OrgROMAMITCH506789',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", IsEither=['Central', 'East'])
+        ]),
+    ServiceContract(
+        # Riverland Commuity Justice Centre
+        organisationID='OrgRIVERLAND534373',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", Is="South")
+        ]),
+    ServiceContract(
+        # Northern Community Legal Service
+        organisationID='OrgNORTHERNC510878',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", Is="North")
+        ]),
+    ServiceContract(
+        # WestSide Lawyers
+        organisationID='OrgWESTSIDEL16',
+        showIf=[
+            ServiceCondition(TheSelected='legalIssue', IsEither=['Other', 'Domestic Violence'])
+        ],
+        branches=[
+            ServiceContractBranch(
+                # WestSide Lawyers Hindmarsh
+                branchID='OrgWESTSIDEL16-BranchNDMARSH212Por5007',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='location',
+                        IsEither=['West', 'North', 'Outback']
+                    )
+                ]
+            ),
+            ServiceContractBranch(
+                # WestSide Lawyers Port Pirie
+                branchID='OrgWESTSIDEL16-BranchTPIRIEFlinder5540',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='location',
+                        IsEither=['West', 'Mid North']
+                    )
+                ]
+            )
+        ]
+    ),
+    ServiceContract(
+        # Consumer Credit Law Centre South Australia
+        organisationID='OrgCONSUMERC500088',
+        showIf=[
+            ServiceCondition(
+                TheSelected='location',
+                IsEither=[
+                    'North',
+                    'South',
+                    'East',
+                    'West',
+                    'Central'
+                ]
+            ),
+            ServiceCondition(
+                TheSelected='legalIssue',
+                Is='Financial'
+            )
+        ],
+        branches=[
+            ServiceContractBranch(
+                # Medindie Gardens SA 5081
+                branchID='OrgCONSUMERC500088-BranchUnit25081',
+                showIf=True,  # TODO: check
+                fold=True
+            ),
+            ServiceContractBranch(
+                # Smithfield SA 5114
+                branchID='OrgCONSUMERC500088-BranchUnit25114',
+                showIf=True,  # TODO: check
+                fold=True
+            ),
+            ServiceContractBranch(
+                # Christies Beach SA 5165
+                branchID='OrgCONSUMERC500088-BranchUnit35165',
+                showIf=True,  # TODO: check
+                fold=True
+            )
+        ]
+    ),
+    ServiceContract(
+        # Family Violence Legal Service Aboriginal Corporation SA
+        organisationID='OrgFAMILYVIO62',
+        showIf=[
+            ServiceCondition(
+                TheSelected='legalIssue',
+                IsEither=['Other', 'Domestic Violence']
+            ),
+            ServiceCondition(
+                TheSelected='location',
+                Is='Mid North'
+            ),
+            ServiceCondition(
+                TheSelected='indigenous',
+                IsNot='No'
+            )
+        ],
+        branches=[
+            ServiceContractBranch(
+                # (Port Augusta)
+                branchID='OrgFAMILYVIO62-BranchUGUSTA26Jerv5700',
+                showIf=True,  # TODO: check
+                fold=True
+            ),
+            ServiceContractBranch(
+                # (Port Lincoln)
+                branchID='OrgFAMILYVIO62-BranchINCOLN56StA5606',
+                showIf=True,  # TODO: check
+                fold=True
+            ),
+            ServiceContractBranch(
+                # (Ceduna)
+                branchID='OrgFAMILYVIO62-BranchCEDUNA17McKe5700',
+                showIf=True,  # TODO: check
+                fold=True
+            )
+        ]
+    ),
+    ServiceContract(
+        # Uniting Communities
+        organisationID='OrgUNITINGCO500069',
+        showIf=True,
+        branches=[
+            ServiceContractBranch(
+                # Uniting Communities Law Centre
+                branchID='OrgUNITINGCO500069-BranchCENTRE',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='legalIssue',
+                        Is='Other'
+                    )
+                ]
+            ),
+            ServiceContractBranch(
+                # Uniting Communities Elder Abuse Unit
+                branchID='OrgUNITINGCO500069-BranchSEUNIT',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='legalIssue',
+                        Is='Elder Abuse'
+                    ),
+                    ServiceCondition(
+                        TheSelected='location',
+                        Is='Central'
+                    )
+                ]
+            ),
+            ServiceContractBranch(
+                # Uniting Communities Neighbourhood/Communitiy Mediation
+                branchID='OrgUNITINGCO500069-BranchDIATION',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='legalIssue',
+                        Is='Mediation'
+                    ),
+                    ServiceCondition(
+                        TheSelected='indigenous',
+                        IsNot='Yes'
+                    ),
+                    ServiceCondition(
+                        TheSelected='location',
+                        IsEither=['North', 'East', 'South', 'West', 'Central']
+                    )
+                ]
+            ),
+            ServiceContractBranch(
+                # Uniting Communities Social Security Legal Advice Service
+                branchID='OrgUNITINGCO500069-BranchSERVICE',
+                showIf=[
+                    ServiceCondition(
+                        TheSelected='legalIssue',
+                        Is='Centrelink'
+                    ),
+                    ServiceCondition(
+                        TheSelected='location',
+                        IsEither=['North', 'East', 'South', 'West', 'Central']
+                    )
+                ]
+            )
+        ]
+    ),
+    ServiceContract(
+        # Limestone Coast Community Justice Centre
+        organisationID='OrgLIMESTONE5290101',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", Is="Mid North")
+        ]),
+    ServiceContract(
+        # Southern Community Justice Centre
+        organisationID='OrgSOUTHERNC516583',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", Is="South")
+        ]),
+    ServiceContract(
+        # Riverland Commuity Justice Centre
+        organisationID='OrgRIVERLAND534373',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", Is="South")
+        ]),
+    ServiceContract(
+        # Women's Legal Services South Australia
+        organisationID='OrgWOMENSLE500088',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", IsEither=['Other', 'Domestic Violence']),
+            ServiceCondition(TheSelected="location", IsEither=['North', 'East', 'South', 'West', 'Central']),
+            ServiceCondition(TheSelected="gender", IsEither=['Female', 'Other'])
+        ]),
+    ServiceContract(
+        # JusticeNet SA
+        organisationID='OrgJUSTICENETire64',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", IsEither=['Financial', 'Migration', 'Mediation', 'Other']),
+            ServiceCondition(TheSelected="location", IsEither=['North', 'East', 'South', 'West', 'Central'])
+        ]),
+    ServiceContract(
+        # Refugee Advocacy Service of South Australia
+        organisationID='OrgREFUGEEADnly209',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Migration"),
+            ServiceCondition(TheSelected="location", Is="Central"),
+            ServiceCondition(TheSelected="indigenous", IsEither=['No', 'Do not wish to say'])
+        ]),
+    ServiceContract(
+        # Homelessness Legal Service
+        organisationID='OrgHOMELESSNEday176',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Homelessness"),
+            ServiceCondition(TheSelected="location", Is="Central")
+        ]),
+    ServiceContract(
+        # Environmental Defenders Office
+        organisationID='OrgENVIRONMEN5000123',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Environmental"),
+            ServiceCondition(TheSelected="location", IsEither=['Central', 'East'])
+        ]),
+    ServiceContract(
+        # Roma Mitchell Human Rights Volunteer Service
+        organisationID='OrgROMAMITCH506789',
+        showIf=[
+            ServiceCondition(TheSelected="legalIssue", Is="Other"),
+            ServiceCondition(TheSelected="location", IsEither=['Central', 'East'])
+        ])
+  ]
+---
+code: |
+  def driveTheFiltrationProcess():
+    # Everytime we seek a value that is not defined yet and has a corresponding question block, DA displayes the question and re-runs this code block from beginning repeating every procedure.
+    # so we need to assume we are in a loop.
+    # we should every time start with a fresh filters list
+    CLCSA_ManagerDirectory.filters = Filters()
+    # however, we want to avoid unneeded filtration cycles. We could do this by creating a filter for every defined value before running the filteration process with `CLCSA_ManagerDirectory.filter()`. Normally, the application adds the first filter 'legalIssue' then run the filteration process, then based on the result of the look ahead, it asks another question. However, every time we ask a new question, we iterate through the entrie process by asking the first question, filtering, looking ahead, asking next question, then filter again, and so forth. Next question might already be defined in which case we should not filter for first question separately then add the next and filter again. We could combine all defined filters and run the filtration once, then based on the look ahead ask any further question, instead for filtering for every single question individually every time we proceed through the interview.
+    
+    # ask first filter question
+    CLCSA_ManagerDirectory.filters.add(
+        Filter(name="legalIssue", value=CLCSA_legalIssue, hurdle=True)) 
+    # add every defined filter
+    if defined('CLCSA_location'):
+        # add location filter
+        CLCSA_ManagerDirectory.filters.add(Filter(name="location", value=CLCSA_location)) 
+    if defined('CLCSA_indigenous'):
+        # add indigenous filter
+        CLCSA_ManagerDirectory.filters.add(Filter(name="indigenous", value=CLCSA_indigenous))
+    if defined('CLCSA_gender'):
+        # add gender filter
+        CLCSA_ManagerDirectory.filters.add(Filter(name="gender", value=CLCSA_gender))
+
+    # if we don't have defined filters or this is the first run ask each question individually, and filter in steps.
+    # do the initial filtration based on this defined questions and only ask more question if needed
+    CLCSA_ManagerDirectory.filter()
+    _neededFilters = CLCSA_ManagerDirectory.getLookAheadList()
+    if "location" in _neededFilters:
+      # we need to ask the location question
+      CLCSA_ManagerDirectory.filters.add(
+          Filter(name="location", value=CLCSA_location))  # type: ignore
+      # update look ahead list based on the new answer
+      CLCSA_ManagerDirectory.filter()
+      _neededFilters = CLCSA_ManagerDirectory.getLookAheadList()
+    if "indigenous" in _neededFilters:
+      # we need to ask the indigenous question
+      CLCSA_ManagerDirectory.filters.add(
+          Filter(name="indigenous", value=CLCSA_indigenous))  # type: ignore
+      # update look ahead list based on the new answer
+      CLCSA_ManagerDirectory.filter()
+      _neededFilters = CLCSA_ManagerDirectory.getLookAheadList()
+    if "gender" in _neededFilters:
+      # we need to ask the gender question
+      CLCSA_ManagerDirectory.filters.add(
+          Filter(name="gender", value=CLCSA_gender))  # type: ignore
+      # update look ahead list based on the new answer
+      CLCSA_ManagerDirectory.filter()
+      _neededFilters = CLCSA_ManagerDirectory.getLookAheadList()

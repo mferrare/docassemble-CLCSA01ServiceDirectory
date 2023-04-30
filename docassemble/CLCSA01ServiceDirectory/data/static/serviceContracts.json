@@ -1,0 +1,135 @@
+[
+  {
+    "showIf": [
+      {
+        "TheSelected": "legalIssue",
+        "Is": "Other",
+        "IsNot": "",
+        "IsEither": [],
+        "IsBoth": [],
+        "IsNeither": [],
+        "IsNotBoth": [],
+        "strictly": false
+      },
+      {
+        "TheSelected": "location",
+        "IsNot": "North"
+      }
+    ],
+    "organisationID": "OrgNORTHERNC510878"
+  },
+  {
+    "showIf": [
+      {
+        "TheSelected": "legalIssue",
+        "Is": "Other"
+      }
+    ],
+    "organisationID": "OrgWESTSIDEL16",
+    "branches": [
+      {
+        "showIf": [
+          {
+            "TheSelected": "location",
+            "IsEither": ["West", "North", "Outback"]
+          }
+        ],
+        "branchID": "OrgWESTSIDEL16-BranchNDMARSH212Por5007"
+      },
+      {
+        "showIf": [
+          {
+            "TheSelected": "location",
+            "IsEither": ["West", "Mid North"]
+          }
+        ],
+        "branchID": "OrgWESTSIDEL16-BranchTPIRIEFlinder5540"
+      }
+    ]
+  },
+  {
+    "showIf": [
+      {
+        "TheSelected": "location",
+        "IsEither": ["North", "South", "East", "West", "Central"]
+      },
+      {
+        "TheSelected": "legalIssue",
+        "Is": "Financial"
+      }
+    ],
+    "organisationID": "OrgCONSUMERC500088",
+    "branches": [
+      {
+        "showIf": true,
+        "branchID": "OrgCONSUMERC500088-BranchUnit25081",
+        "fold": true
+      },
+      {
+        "showIf": true,
+        "branchID": "OrgCONSUMERC500088-BranchUnit25114",
+        "fold": true
+      },
+      {
+        "showIf": true,
+        "branchID": "OrgCONSUMERC500088-BranchUnit35165",
+        "fold": true
+      }
+    ]
+  },
+  {
+    "showIf": [
+      {
+        "TheSelected": "legalIssue",
+        "Is": "Other"
+      },
+      {
+        "TheSelected": "location",
+        "Is": "Mid North"
+      },
+      {
+        "TheSelected": "indigenous",
+        "IsNot": "No"
+      }
+    ],
+    "organisationID": "OrgFAMILYVIO62",
+    "branches": [
+      {
+        "showIf": true,
+        "branchID": "OrgFAMILYVIO62-BranchUGUSTA26Jerv5700",
+        "fold": true
+      },
+      {
+        "showIf": true,
+        "branchID": "OrgFAMILYVIO62-BranchINCOLN56StA5606",
+        "fold": true
+      },
+      {
+        "showIf": true,
+        "branchID": "OrgFAMILYVIO62-BranchCEDUNA17McKe5700",
+        "fold": true
+      }
+    ]
+  },
+  {
+    "showIf": true,
+    "organisationID": "OrgUNITINGCO500069",
+    "branches": [
+      {
+        "showIf": [
+          {
+            "TheSelected": "legalIssue",
+            "Is": "Centrelink",
+            "strictly": false
+          },
+          {
+            "TheSelected": "location",
+            "IsEither": ["North", "East", "South", "West", "Central"],
+            "strictly": false
+          }
+        ],
+        "branchID": "OrgUNITINGCO500069-BranchSERVICE"
+      }
+    ]
+  }
+]

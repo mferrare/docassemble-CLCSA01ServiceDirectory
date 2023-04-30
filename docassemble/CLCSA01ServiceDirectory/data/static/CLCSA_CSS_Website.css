@@ -1,0 +1,678 @@
+.navbar {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+/* This sets the colour of the 'Source' link in the navbar */
+.navbar .nav-item a {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Line below the navbar*/
+.navbar {
+  border-bottom: 8px solid rgba(44, 84, 143);
+  padding: 0px !important;
+}
+
+/* .disclaimer_heading {
+  font-size: 12pt;
+  text-align: left;
+} */
+
+.disclaimer_text {
+  /* font-size: 9pt;
+  margin-bottom: 0.5em; */
+  text-align: justify;
+}
+
+.logotext {
+  color: black;
+  white-space: normal;
+}
+
+/* Customise built-in footer */
+footer.dafooter {
+  background-color: inherit !important;
+}
+footer.dafooter > div.container {
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+body.da-pad-for-footer {
+  margin-bottom: 0px !important;
+}
+
+body.dabody {
+  border: 0;
+  margin: 0;
+  padding-bottom: 0px !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* END - Customise built-in footer */
+
+/* replace dabody */
+#dll_mainSection {
+  /* flex: 1; */
+  /* max-width: 600px; */
+  width: 76%;
+}
+
+/* hide original footer and nav */
+#dabody .danavbarcontainer,
+#dabody footer {
+  display: none;
+}
+
+/* override defaults */
+.row {
+  justify-content: center;
+}
+
+/* fix question container size */
+@media (max-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 500px;
+  }
+}
+
+/* replace original progress bar */
+#daquestion .progress {
+  display: none;
+}
+
+#dll_progressBar {
+  display: flex;
+  height: 0.25rem;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin: 28px 15px;
+}
+
+#dll_progressBar .progress-bar {
+  /* also hidden with js */
+  /* background-image: linear-gradient(to right, #ed82ab, #2c548f); */
+  /* background-image: linear-gradient(to right, #ed8282, #2c548f); */
+  background-image: linear-gradient(to right, #ed84ec, #2b9ae7);
+  /* background-image: linear-gradient(to right, #82d4ed, #2c548f); */
+
+  content-visibility: hidden;
+}
+
+.da-page-header {
+  padding-bottom: 0px;
+  margin: 0px 0px 18px 0px;
+  border-bottom: 0px;
+}
+
+#CLCSA_navbar {
+  max-width: 1200px;
+  width: 90%;
+  align-self: center;
+}
+
+#CLCSA_navbar-container {
+  margin: 26px 32px 40px 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.da-pad-for-navbar {
+  padding-top: 0px;
+}
+
+.DLL_btn-danger-text {
+  color: var(--bs-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-flex;
+  gap: 6px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: 'Ubuntu';
+  justify-content: space-between;
+  padding: 0px;
+}
+
+/* footer */
+#DLL_attribution-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  height: fit-content;
+  padding: 28px 10px;
+  margin-top: 40px;
+}
+
+#DLL_attribution-text {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  line-height: 18px;
+  letter-spacing: 0.75px;
+}
+
+#DLL_attribution-logo {
+  height: 11vw;
+  display: flex;
+  max-height: 35px;
+  margin-left: 15px;
+}
+
+/* improve spinner */
+#daSpinner {
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0px;
+  background: rgb(159 191 213 / 15%);
+  backdrop-filter: blur(4px);
+}
+div.da-spinner-container {
+  margin-top: 0;
+}
+
+/* override question section - hidden by default and then animated in*/
+#daform {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#dabody {
+  /* display: none; */
+  content-visibility: hidden;
+  flex: 1;
+}
+/* override question font size */
+#daquestion,
+#dll_questionSect {
+  font-size: 1rem;
+}
+#daquestion .h3,
+h3,
+#dll_questionSect .h3 {
+  font-size: 1.35rem;
+}
+
+#daquestion .da-subquestion,
+#dll_questionSect .da-subquestion {
+  font-size: 0.8rem;
+  color: var(--bs-gray-600);
+}
+
+input.labelauty + label {
+  font-size: 0.8rem;
+}
+
+/* style the question card */
+#dll_questionCards {
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: center;
+  align-content: stretch;
+  grid-template-columns: 1fr;
+  margin-bottom: 38px;
+}
+
+#dll_questionCard:not(.dll_questionCard_noBg) {
+  background: #fdfeff;
+  padding: 26px 58px 8px 58px;
+  border: 1px transparent;
+  border-radius: 1rem;
+  filter: drop-shadow(0px 0px 10px rgb(44 84 143/ 0.1));
+}
+
+.dll_questionCard_noBg {
+  padding-top: 26px;
+  padding-bottom: 8px;
+}
+/* for 768px and smaller */
+@media only screen and (max-width: 768px) {
+  #dll_questionCard {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* stack the cards */
+#dll_questionCard {
+  grid-area: 1/1;
+}
+
+#dll_questionCard:not(:first-child) {
+  width: 90%;
+  transform: translateY(12px);
+  justify-self: center;
+}
+#dll_questionCard:first-child {
+  z-index: 2;
+}
+
+.da-field-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 26px;
+}
+
+/* style box selection */
+#dll_multiBox_container {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--dll-box-min-width), auto)
+  );
+}
+
+.dll_multiBox_multi_line {
+  --dll-box-min-width: 130px;
+}
+
+.dll_multiBox_single_line {
+  --dll-box-min-width: 150px;
+}
+
+#dll_multiBox_item.dll_multiBox_item_flex {
+  display: flex;
+  min-width: 130px;
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 0.7rem;
+  padding: 0.2rem 1rem;
+  flex-wrap: nowrap;
+}
+.dll_multiBox_item_flex #dll_multiBox_item_checkmark {
+  margin: 0;
+}
+
+#dll_multiBox_item {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.7rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--bs-gray-400);
+  --tw-border-opacity: 0.6;
+  background-color: #f8fafc0d;
+  padding: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: rgb(100 116 139 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+  flex-wrap: nowrap;
+}
+
+#dll_multiBox_item:hover {
+  background-color: #f5faff;
+}
+#dll_multiBox_item.selected {
+  background-color: #eff7ff;
+  border-color: #0870b7;
+  --tw-text-opacity: 1;
+  /* color: rgb(241 245 249 / var(--tw-text-opacity)); */
+}
+#dll_multiBox_item.selected:hover {
+  --tw-bg-opacity: 1;
+  background-color: #fafcff;
+}
+#dll_multiBox_item_label {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#dll_multiBox_item_label_more {
+  position: relative;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+}
+#dll_multiBox_item_label_more:hover {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+#dll_multiBox_item_label_more #moreDetail {
+  position: absolute;
+  top: 1.25rem;
+  display: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 150px;
+  border-radius: 0.125rem;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(191 219 254 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+#dll_multiBox_item_label_more #moreDetail[data-show] {
+  display: block;
+}
+#dll_multiBox_item_label_more #moreBtn {
+  width: 1.25rem;
+}
+#dll_multiBox_item_img {
+  width: 2.2rem;
+  padding-bottom: 0.75rem;
+}
+
+/* icon in selection item must be svg but if img we need to resize */
+#dll_multiBox_item_img img, #dll_multiBox_item_img svg{
+  width: 100%;
+  height: auto;
+}
+
+/* css rules for single line selection items with icons eg gender question */
+.dll_multiBox_single_line #dll_multiBox_item {
+  align-items: center;
+}
+
+.dll_multiBox_single_line #dll_multiBox_item_img {
+  padding: 0;
+  width: 1.3rem;
+}
+
+.dll_multiBox_single_line #dll_multiBox_item_checkmark {
+  align-self: center;
+}
+
+#dll_multiBox_item_checkmark {
+  width: 1.1rem;
+  color: var(--bs-gray-400);
+  align-self: end;
+  margin: 0 4px;
+}
+
+#dll_multiBox_item_checkmark.checked {
+  color: #086fb6;
+}
+
+/* tailwind utility classes */
+#tailwindApp .h-auto {
+  height: auto;
+}
+#tailwindApp .w-5\/6 {
+  width: 83.333333%;
+}
+#tailwindApp .w-full {
+  width: 100%;
+}
+.tailwindApp .h-6 {
+  height: 1.5rem;
+}
+.tailwindApp .w-6 {
+  width: 1.5rem;
+}
+#tailwindApp .border-2 {
+  border-width: 2px;
+}
+#tailwindApp .border-solid {
+  border-style: solid;
+}
+#tailwindApp .border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+/* final screen */
+#dll_match_container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#dll_match_viewmode_list {
+  flex-shrink: 3;
+  flex-grow: 1;
+}
+#dll_match_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#dll_match_item {
+  --dll-border-color: rgb(209 213 219);
+  --dll-icon-color: rgb(75 85 99);
+  --dll-bg-color: rgb(255 255 255);
+  border-color: var(--dll-border-color);
+  background-color: var(--dll-bg-color);
+  display: flex;
+  min-height: 25px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.75rem;
+  border-radius: 0.75rem;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.75rem 1rem;
+}
+#dll_match_item.dll_match_selected {
+  --dll-border-color: rgb(62, 119, 205) !important;
+  --dll-bg-color: rgb(237, 244, 255) !important;
+  --dll-icon-color: var(--dll-border-color) !important;
+}
+#dll_match_item:not(.dll_match_item_folder) {
+  cursor: pointer;
+}
+#dll_match_item:not(.dll_match_item_folder):hover {
+  --dll-bg-color: rgb(243 244 246);
+}
+#dll_match_item.dll_match_item_folder {
+  --dll-border-color: rgb(229 231 235);
+  --dll-icon-color: rgb(176, 176, 176);
+  gap: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+#dll_match_item.dll_match_item_leaf {
+  margin-left: 3.5rem;
+}
+#dll_match_item_logo {
+  display: flex;
+  width: 5rem;
+}
+#dll_match_item_logo img {
+  width: 100%;
+}
+#dll_match_item_title {
+  flex-grow: 1;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+#dll_match_item_icon {
+  color: var(--dll-icon-color);
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+#dll_match_viewmode_single {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+#dll_match_single_card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border-width: 0px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+    drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+#dll_match_single_header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  padding: 1rem;
+}
+#dll_match_single_header_main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+#dll_match_single_title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: black;
+  min-width: 43vw;
+}
+#dll_match_single_header_backbtn {
+  width: 1.25rem;
+  cursor: pointer;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+#dll_match_single_header_backbtn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+#dll_match_single_body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+#dll_match_single_body section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#dll_match_single_body section header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+#dll_match_single_body section a {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+#dll_match_single_body section a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+#dll_match_single_icon {
+  display: flex;
+  width: 1rem;
+  align-items: center;
+}
+#dll_match_single_tags {
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+#dll_match_single_tags li {
+  border-radius: 1.5rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding: 0.25rem 0.75rem;
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+    drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+@media (max-width: 576px) {
+  /* on mobile screen hide the list when a service is selected */
+  #dll_match_container {
+    flex-wrap: wrap-reverse;
+  }
+  #dll_match_viewmode_list.dll_singleview_mode {
+    display: none;
+  }
+}
+#dll_match_single_body section > div {
+  color: black;
+}
+
+/* final screen animation */
+#dll_questionCard * {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, text-decoration;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.dll_card_pushed_right {
+  transform: translateX(110px);
+  opacity: 0;
+}
+.dll_card_original_position {
+  transform: translateX(0);
+  opacity: 1;
+}

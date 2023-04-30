@@ -1,0 +1,200 @@
+[
+  {
+    "ID": "OrgCONSUMERC500088",
+    "name": "Consumer Credit Law Centre South Australia",
+    "number": "(08) 8342 1800",
+    "url": "http://consumercreditsa.org",
+    "address": "10 Pitt Street, Adelaide SA 5000",
+    "branches": [
+      {
+        "ID": "OrgCONSUMERC500088-BranchUnit25081",
+        "name": "Medindie Gardens Office",
+        "address": "Unit 2 59 Main North Road, Medindie Gardens SA 5081",
+        "number": "(08) 8342 1800",
+        "url": "http://consumercreditsa.org"
+      },
+      {
+        "ID": "OrgCONSUMERC500088-BranchUnit25114",
+        "name": "Smithfield Office",
+        "address": "Unit 2, 2B Morialta Drive, Smithfield SA 5114",
+        "number": "(08) 8342 1800",
+        "url": "http://consumercreditsa.org"
+      },
+      {
+        "ID": "OrgCONSUMERC500088-BranchUnit35165",
+        "name": "Christies Beach Office",
+        "address": "Unit 3, 107 Dyson Road, Christies Beach SA 5165",
+        "number": "(08) 8342 1800",
+        "url": "http://consumercreditsa.org"
+      }
+    ]
+  },
+  {
+    "ID": "OrgENVIRONMEN5000123",
+    "name": "Environmental Defenders Office",
+    "number": "(08) 8359 2222",
+    "url": "https://www.edo.org.au",
+    "address": "Flinders University City Campus, Level 1, 182 Victoria Square, Adelaide SA 5000"
+  },
+  {
+    "ID": "OrgFAMILYVIO62",
+    "name": "Family Violence Legal Service Aboriginal Corporation SA",
+    "url": "http://www.fvlsac.org.au",
+    "branches": [
+      {
+        "ID": "OrgFAMILYVIO62-BranchUGUSTA26Jerv5700",
+        "name": "Port Augusta Office",
+        "address": "26 Jervois Street Port Augusta SA 5700",
+        "number": "Freecall 1800 111 052 or Telephone (08) 8641 2195",
+        "url": "http://www.fvlsac.org.au"
+      },
+      {
+        "ID": "OrgFAMILYVIO62-BranchINCOLN56StA5606",
+        "name": "Port Lincoln Office",
+        "address": "56 St Andrews Terrace Port Lincoln SA 5606",
+        "number": " Freecall 1800 309 912 or Telephone (08) 8683 1896",
+        "url": "http://www.fvlsac.org.au"
+      },
+      {
+        "ID": "OrgFAMILYVIO62-BranchCEDUNA17McKe5700",
+        "name": "Ceduna Office",
+        "address": "17 McKenzie Street Ceduna SA 5700",
+        "number": "Freecall 1800 839 059 or Telephone (08) 8625 3800",
+        "url": "http://www.fvlsac.org.au"
+      }
+    ]
+  },
+  {
+    "ID": "OrgHOMELESSNEday176",
+    "name": "Homelessness Legal Service",
+    "number": "(08) 8232 2282 (Catherine House) outreach times by appointment",
+    "url": "https://www.justicenet.org.au/what-we-do/homeless-lega",
+    "address": "Hutt Street Centre, 258 Hutt Street, Adelaide SA 5000 (Outreach times: 10am-12pm Monday)"
+  },
+  {
+    "ID": "OrgINSPIRINGire120",
+    "name": "Inspiring Determination Independence Growth and Opportunities (INDIGO)",
+    "number": "1300 655 037",
+    "url": "https://www.wlssa.org.au/copy-of-the-womens-specialist-progr",
+    "address": "Not Available (Ring number to inquire)"
+  },
+  {
+    "ID": "OrgJUSTICENETire64",
+    "name": "JusticeNetSA",
+    "number": "(08) 8313 5005",
+    "url": "https://www.justicenet.org.au",
+    "address": "Not Available (Ring number to inquire)"
+  },
+  {
+    "ID": "OrgLIMESTONE5290101",
+    "name": "Limestone Coast Community Justice Centre",
+    "number": "(08) 8723 1396",
+    "url": "https://www.communityjusticesa.org.au",
+    "address": "8a Commercial Street West Mount Gambier SA 5290"
+  },
+  {
+    "ID": "OrgNORTHERNC510878",
+    "name": "Northern Community Legal Service",
+    "number": "(08) 8286 6911",
+    "url": "http://northernlegal.org.au",
+    "address": "26 John Street Salisbury SA 5108"
+  },
+  {
+    "ID": "OrgREFUGEEADnly209",
+    "name": "Refugee Advocacy Service of South Australia",
+    "number": "0401 247 224 Arvin Chang (Project Coordinator and Registered Migration Agent)",
+    "url": "https://rassa.org.au",
+    "address": "Flinders University Building, 182 Victoria Square, Adelaide SA 5000 (by appointment only)"
+  },
+  {
+    "ID": "OrgRIVERLAND534373",
+    "name": "Riverland Commuity Justice Centre",
+    "number": "(08) 8582 4998",
+    "url": "https://www.communityjusticesa.org.au",
+    "address": "9 Kay Avenue Berri SA 5343"
+  },
+  {
+    "ID": "OrgROMAMITCH506789",
+    "name": "Roma Mitchell Human Rights Volunteer Service",
+    "number": "(08) 8362 1199",
+    "url": "https://www.facebook.com/RomaMitchellCLCInc/",
+    "address": "110 The Parade Norwood, SA 5067"
+  },
+  {
+    "ID": "OrgSOUTHERNC516583",
+    "name": "Southern Community Justice Centre",
+    "number": "(08) 8384 5222",
+    "url": "https://www.communityjusticesa.org.au",
+    "address": "40 Beach Road Chrisies Beach SA 5165"
+  },
+  {
+    "ID": "OrgUNITINGCO500069",
+    "name": "Uniting Communities",
+    "number": "(08) 8342 1800",
+    "url": "https://www.unitingcommunities.org",
+    "address": "43 Franklin Street, Adelaide SA 5000",
+    "branches": [
+      {
+        "ID": "OrgUNITINGCO500069-BranchSEUNIT",
+        "name": "Uniting Communities Elder Abuse Unit",
+        "address": "43 Franklin Street, Adelaide SA 5000",
+        "number": "(08) 8342 1800",
+        "url": "https://www.unitingcommunities.org/services/financial-legal-services/elder-abuse-unit/",
+        "logo": "https://www.unitingcommunities.org/images/ucLogo.svg"
+      },
+      {
+        "ID": "OrgUNITINGCO500069-BranchCENTRE",
+        "name": "Uniting Communities Law Centre",
+        "address": "43 Franklin Street, Adelaide SA 5000",
+        "number": "1800 615 677",
+        "url": "https://www.unitingcommunities.org",
+        "logo": "https://www.unitingcommunities.org/images/ucLogo.svg"
+      },
+      {
+        "ID": "OrgUNITINGCO500069-BranchSERVICE",
+        "name": "Uniting Communities Social Security Legal Advice Service",
+        "address": "43 Franklin Street, Adelaide SA 5000",
+        "number": "(08) 8342 1800",
+        "url": "https://www.unitingcommunities.org/services/financial-legal-services/welfare-rights/",
+        "logo": "https://www.unitingcommunities.org/images/ucLogo.svg"
+      },
+      {
+        "ID": "OrgUNITINGCO500069-BranchDIATION",
+        "name": "Uniting Communities Neighbourhood/Communitiy Mediation",
+        "address": "43 Franklin Street, Adelaide SA 5000",
+        "number": "Not Available (Ring number to inquire)",
+        "url": "https://www.unitingcommunities.org/services/financial-legal-services/mediation-services/",
+        "logo": "https://www.unitingcommunities.org/images/ucLogo.svg"
+      }
+    ],
+    "logo": "https://www.unitingcommunities.org/images/ucLogo.svg"
+  },
+  {
+    "ID": "OrgWESTSIDEL16",
+    "name": "WestSide Lawyers",
+    "url": "http://www.westsidelawyers.net",
+    "branches": [
+      {
+        "ID": "OrgWESTSIDEL16-BranchNDMARSH212Por5007",
+        "name": "WestSide Lawyers Hindmarsh",
+        "address": "212 Port Road Hindmarsh SA 5007",
+        "number": "(08) 8346 9009",
+        "url": "http://www.westsidelawyers.net"
+      },
+      {
+        "ID": "OrgWESTSIDEL16-BranchTPIRIEFlinder5540",
+        "name": "WestSide Lawyers Port Pirie",
+        "address": "Flinders Arcade 72 Ellen Street Port Pirie SA 5540",
+        "number": "(08) 8633 3600",
+        "url": "http://www.westsidelawyers.net"
+      }
+    ]
+  },
+  {
+    "ID": "OrgWOMENSLE500088",
+    "name": "Women's Legal Services South Australia",
+    "number": "(08) 8340 9009",
+    "url": "https://www.wlssa.org.au",
+    "address": "45 Grenfell Street, Adelaide SA 5000"
+  }
+]

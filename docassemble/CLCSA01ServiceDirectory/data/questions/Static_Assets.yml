@@ -1,0 +1,16 @@
+---
+images:
+  female: female-symbol.svg
+  male: male-symbol.svg
+  other: compass.svg
+  financial: financial.svg
+  mediation: mediation.svg
+  homelessness: homelessness.svg
+  migration: migration.svg
+  elder: elder.svg
+  domestic violence: dv.svg
+  enviromental: enviro.svg
+  centrelink: centrelink.svg
+---
+objects:
+  - CLCSAlogo: DAStaticFile.using(filename='CLCSA_logo.svg')

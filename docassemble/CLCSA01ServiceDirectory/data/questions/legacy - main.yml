@@ -1,0 +1,167 @@
+---
+include:
+  - CLCSA_Questions.yml
+  - CLCSA_List_of_Services.yml
+  - CLCSA_List_of_Services_Code.yml
+---
+metadata:
+  title: |
+    CLCSA Service Directory
+  short title: |
+    CLCSA
+  authors:
+    - name: Shae Smith
+    - name: Jessica Phuong-Rafferty
+    - name: Mattea Romano
+    - name: Andjela Jovic
+    - name: Zahraa Alwan
+  organisation: Flinders University
+  show login: False
+  footer: |
+    <div style="display: flex;align-items: flex-start;justify-content: center;font-size: 12px;height: 100%;padding: 10px;">
+      <div style=" display: flex; height: 100%; align-items: center; line-height: 18px;" class="flindersAttribution">
+        Developed by Flinders University in collaboration with Community Legal Centres South Australia (CLCSA)
+      </div>
+      <div style="height: 40px; display: flex; margin-left: 15px;" class="flindersLogo">
+        <img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" style="height: 100%;">
+      </div>
+    </div>
+  exit label: 'Safe Exit'
+  exit url: https://google.com
+  exit link: exit
+---
+objects:
+  - CLCSAlogo: DAStaticFile.using(filename='CLCSAlogo_nowords.png')
+---
+features:
+  css:
+    - CLCSA_CSS_Website.css
+    - custom-f2ddd4f8.css
+  javascript:
+    - custom-f2ddd3f2.js
+  debug: False
+  hide standard menu: True
+  inverse navbar: False
+  progress bar: True
+  show progress bar percentage: True
+  navigation back button: True
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + CLCSAlogo.url_for() + '" style="height: 60px;"><span class="d-none d-sm-inline" style="margin-left: 2px;">CLCSA Service Directory</span>')
+---
+# Table Block
+table: CLCSAdisplay_gender_list
+rows: CLCSAdisplay_specific_gender
+columns:
+  - Name of Service: |
+      row_item['name']
+  - Address: |
+      row_item['display address']
+  - Phone: |
+      row_item['display phone']
+  - This service specialises in: |
+      row_item['display legal issue']
+---
+table: CLCSAdisplay_indigenous_list
+rows: CLCSAdisplay_indigenous
+
+columns:
+  - Name of Service: |
+      row_item['name']
+  - Address: |
+      row_item['display address']
+  - Phone: |
+      row_item['display phone']
+  - This service specialises in: |
+      row_item['display legal issue']
+---
+table: CLCSAdisplay_leftover_list
+rows: CLCSAdisplay_leftovers
+columns:
+  - Name of Service: |
+      row_item['name']
+  - Address: |
+      row_item['display address']
+  - Phone: |
+      row_item['display phone']
+  - This service specialises in: |
+      row_item['display legal issue']
+---
+# Display legal issue as a bullet list.  If there
+# is only one issue, then don't have a single
+# bullet list.
+# We construct the bullet list by creating a string
+# of HTML commands (markdown doesn't work in code I
+# just found out this morning :-)
+# We save our bullet list to display in a key called
+# 'display legal issue' and we use that in our table.
+code: |
+  # Initialise the display with an empty string.  We'll use
+  # a temp variable here because it's easier to read
+  # The '<ul>' and '<li>' tags that you see are HTML commands
+  # to make a bullet list.  
+  CLCSAtemp_list = '<ul>'
+
+  # Now add each item to the string as a markdown bullet list item
+  for an_issue in CLCSA_Services[i]['legal issue']:
+    if an_issue == 'Other':
+      an_issue = 'General Services'
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
+
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  # Now we've added each item, we can assign the temp variable
+  # to the 'real' variable we want displayed
+  CLCSA_Services[i]['display legal issue'] = CLCSAtemp_list
+---
+# Display locations as a bullet list.
+# I haven't put as many comments in here just in case all the
+# comments are confusing
+code: |
+  CLCSAtemp_list = '<ul>'
+
+  for an_issue in CLCSA_Services[i]['location']:
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display location'] = CLCSAtemp_list
+---
+# This code does something similar but it works on the
+# CLCSAlegalissue checkbox instead of the data structure
+code: |
+  CLCSAtemp_list = '<ul>'
+  for an_issue in CLCSAlegalissue.true_values():
+    if an_issue == 'Other':
+      an_issue = 'General Services'
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
+
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  display_CLCSAlegalissue = CLCSAtemp_list
+---
+# Bullet list code for location in checkbox - it works!
+code: |
+  CLCSAtemp_list = '<ul>'
+  for an_issue in CLCSAlocation.true_values():
+    CLCSAtemp_list = '{}<li>{}</li>'.format(CLCSAtemp_list, an_issue)
+
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  display_CLCSAlocation = CLCSAtemp_list
+---
+# Bullet list for phone numbers - it works!
+code: |
+  CLCSAtemp_list = '<ul>'  
+
+  for an_issue in CLCSA_Services[i]['phone']:
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display phone'] = CLCSAtemp_list
+---
+# Bullet list for address - it works!
+code: |
+  CLCSAtemp_list = '<ul>'  
+
+  for an_issue in CLCSA_Services[i]['address']:
+    CLCSAtemp_list = '{}<li>{}</li>\n'.format(CLCSAtemp_list, an_issue)
+  CLCSAtemp_list = '{}</ul>'.format(CLCSAtemp_list)
+  CLCSA_Services[i]['display address'] = CLCSAtemp_list
+---
+

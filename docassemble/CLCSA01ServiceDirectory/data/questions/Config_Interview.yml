@@ -1,0 +1,48 @@
+---
+metadata:
+  title: |
+    CLCSA Service Directory
+  short title: |
+    CLCSA
+  authors:
+    - name: Shae Smith
+    - name: Jessica Phuong-Rafferty
+    - name: Mattea Romano
+    - name: Andjela Jovic
+    - name: Zahraa Alwan
+  organisation: Flinders University
+  show login: False
+  footer: |
+    <div id="DLL_attribution-container">
+      <div id="DLL_attribution-text">
+        Developed by Flinders University in collaboration with Community Legal Centres South Australia (CLCSA)
+      </div>
+      <div id="DLL_attribution-logo">
+        <img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" style="height: 100%;">
+      </div>
+    </div>
+  exit label: 'Safe Exit'
+  exit url: https://google.com
+  exit link: exit
+---
+features:
+  css:
+    - custom-bootstrap-theme.min.css
+    - CLCSA_CSS_Website.css
+    - custom-f2ddd4f8.css
+  javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js
+    - custom-f2ddd3f2.js
+  debug: False
+  hide standard menu: True
+  inverse navbar: False
+  progress bar: True
+  show progress bar percentage: True
+  navigation back button: False
+  question back button: True
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + CLCSAlogo.url_for() + '" style="height: 70px;"><span class="d-none d-sm-inline" style="margin-left: 2px;">CLCSA Service Directory</span>')
+---
+
